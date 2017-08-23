@@ -44,12 +44,31 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    NSString* orderInfo = [[AlipaySDK defaultService]fetchOrderInfoFromH5PayUrl:[request.URL absoluteString]];
-    if (orderInfo.length > 0) {
-        [self payWithUrlOrder:orderInfo];
+//    //老版本对H5拦截支付分两步骤：1、获取订单串；2、订单串非空，则进行支付
+//    NSString* orderInfo = [[AlipaySDK defaultService]fetchOrderInfoFromH5PayUrl:[request.URL absoluteString]];
+//    if (orderInfo.length > 0) {
+//        [self payWithUrlOrder:orderInfo];
+//        return NO;
+//    }
+//    return YES;
+    
+    //新版本的H5拦截支付对老版本的获取订单串和订单支付接口进行合并，推荐使用该接口
+    __weak APWebViewController* wself = self;
+    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[request.URL absoluteString] fromScheme:@"alisdkdemo" callback:^(NSDictionary *result) {
+        // 处理支付结果
+        NSLog(@"%@", result);
+        // isProcessUrlPay 代表 支付宝已经处理该URL
+        if ([result[@"isProcessUrlPay"] boolValue]) {
+            // returnUrl 代表 第三方App需要跳转的成功页URL
+            NSString* urlStr = result[@"returnUrl"];
+            [wself loadWithUrlStr:urlStr];
+        }
+    }];
+    
+    if (isIntercepted) {
         return NO;
     }
-	return YES;
+    return YES;
 }
 
 - (void)loadWithUrlStr:(NSString*)urlStr

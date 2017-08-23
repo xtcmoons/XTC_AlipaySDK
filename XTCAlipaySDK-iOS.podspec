@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTCAlipaySDK-iOS"
-  s.version      = "15.3.7"
+  s.version      = "15.4.1"
   s.summary      = "AlipaySDK iOS"
 
   # This description is used to generate tags and improve search results.
