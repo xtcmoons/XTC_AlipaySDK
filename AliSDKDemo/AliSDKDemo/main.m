@@ -2,17 +2,15 @@
 //  main.m
 //  AliSDKDemo
 //
-//  Created by 方彬 on 11/29/13.
-//  Copyright (c) 2013 Alipay.com. All rights reserved.
+//  Created by tommy on 2017/10/24.
+//  Copyright © 2017年 antfin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-#import "APAppDelegate.h"
-
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([APAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
