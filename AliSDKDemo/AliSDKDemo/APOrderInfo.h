@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+// 重要说明
+// 这里只例举了少量本Demo中使用到的参数；真实的参数集肯定大于这个范围；
+// 具体可参见 https://docs.open.alipay.com/204/105465/
+
 @interface APBizContent : NSObject
 
 // NOTE: (非必填项)商品描述
@@ -59,7 +63,7 @@
 // NOTE: 请求调用的接口版本，固定为：1.0
 @property (nonatomic, copy) NSString *version;
 
-// NOTE: (非必填项)支付宝服务器主动通知商户服务器里指定的页面http路径
+// NOTE: 支付宝服务器主动通知商户服务器里指定的页面http路径(本Demo仅做展示所用，商户需要配置这个参数)
 @property (nonatomic, copy) NSString *notify_url;
 
 // NOTE: (非必填项)商户授权令牌，通过该令牌来帮助商户发起请求，完成业务(如201510BBaabdb44d8fd04607abf8d5931ec75D84)
