@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "AlipaySDK iOS"
   s.homepage     = "https://github.com/xtcmoons/XTC_AlipaySDK"
   s.license      = "MIT"
-  s.author             = { "陈明" => "xtcmoons@yeah.net" }
+  s.author             = { "xtcmoon" => "xtcmoons@yeah.net" }
   s.platform     = :ios
   # s.platform     = :ios, "5.0"
   s.source       = { :git => "https://github.com/xtcmoons/XTC_AlipaySDK.git", :tag => s.version }
