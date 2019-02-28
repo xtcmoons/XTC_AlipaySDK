@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "XTCAlipaySDK-iOS"
-  s.version      = "15.5.9"
+  s.version      = "15.6.0"
   s.summary      = "AlipaySDK iOS"
   s.homepage     = "https://github.com/xtcmoons/XTC_AlipaySDK"
   s.license      = "MIT"
