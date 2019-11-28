@@ -8,11 +8,12 @@ Pod::Spec.new do |s|
   s.author       = { "xtcmoon" => "xtcmoons@yeah.net" }
   s.platform     = :ios
   s.ios.deployment_target = "7.0"
+  s.static_framework = true
   s.source       = { :git => "https://github.com/xtcmoons/XTC_AlipaySDK.git", :tag => s.version }
   s.resources = "AlipaySDK.bundle"
   s.vendored_frameworks = 'AlipaySDK.framework'
-  s.frameworks = "SystemConfiguration", "CoreTelephony", "QuartzCore", "CoreText", "CoreGraphics", "UIKit", "Foundation", "CFNetwork", "CoreMotion"
-  s.libraries = "z", "c++"
+  s.frameworks = 'QuartzCore', 'CoreText', 'CoreGraphics', 'CoreTelephony', 'SystemConfiguration', 'UIKit', 'Foundation', 'CFNetwork', 'CoreMotion', 'WebKit' 
+  s.libraries = 'c++', 'z'
   s.requires_arc = true
 
 end
